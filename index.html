@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lis</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="index-style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <div id="scroll_indicator" class="scroll_indicator">
+        <img src="assets/arrow_downward.svg">  
+        <p>Scroll for more information</p>
+        <img src="assets/arrow_downward.svg">
+    </div>
+    <div>
+
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html"><img src="assets/logo.png" alt="logo"></a></li>
+            <li><a href="docs/">Docs</a></li>
+            <li><a href="https://codeberg.org/LordAxi/Lis/">Codeberg</a></li>
+            <li><a href="web/">Web Version</a></li>
+        </ul>
+    </nav>
+    
+    <div class="header">
+    <img class="logo" style="image-rendering: pixelated" src="assets/logo.png">
+    <h1 class="index_title">Lis</h1>
+    </div>
+<div class="content-container">
+    <h2 class="index_subtitle">Let - it - shine</h2>
+    <div class="div" style="margin-bottom: 40px;">
+        <p>
+            Lis (Let - it - shine) is a TUI program written in C which helps beginners (and everynone else) at creating schematics.
+        </p>
+    </div>
+    <button><a href="docs/getting_started/">Installation</a></button>
+    <button><a href="https://codeberg.org/LordAxi/Lis">Codeberg</a></button>
+    <button><a href="web/">Try in the web!</a></button>
+    <hr>
+    <h3>Main Features</h3>
+    
+    <div class="feature-container">
+        <div class="div feature">
+            <div class="feature-img">
+                <img src="assets/code.svg">
+            </div>
+            <div class="feature-text">
+                <p>Lis is <b class="bold">open-source</b> and everyoune can 
+                   contribute to the Project. Interested? Have a look at the notes about
+                   <a style="cursor:pointer" onclick="document.getElementById('h3_contributing').scrollIntoView()">contributing</a>.
+                </p>
+            </div>
+        </div>
+        <div class="div feature">
+            <div class="feature-img">
+                <img src="assets/speed.svg">
+            </div>
+            <div class="feature-text">
+                <p>Because its entirely based on C and ncurses, Lis is extremly 
+                   light on <b class="bold">performace</b>.
+                   This allows old machines to run it without a problem.</p>
+            </div>
+        </div>
+        <div class="div feature">
+            <div class="feature-img">
+                <img src="assets/calculate.svg">
+            </div>
+            <div class="feature-text">
+                <p>Lis helps you by <b class="bold">calculating</b> values for resistors
+                and other parts that fit for your needs and projects.
+                </p>
+            </div>
+        </div>
+        <div class="div feature">
+            <div class="feature-img">
+                <img src="assets/search.svg">
+            </div>
+            <div class="feature-text">
+                <p><b class="bold">Analyzing</b>  and <b class="bold">identifying</b> Components to get values 
+                    (e.g. by inputting color codes) is the second big focus
+                    of Lis.
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h3 id="h3_contributing">Contributing</h3>
+    <div class="div">
+        <p>Lis is open-source, which means anyone can contribute to the Project.
+            To start, simply read the 
+            <a href="docs/contribution_guidelines/">Contributing Guidelines</a>
+            in the Documentation. Then you can either open
+            <a href="https://codeberg.org/LordAxi/Lis/pulls">Pull Requests</a> 
+            or fix <a href="https://codeberg.org/LordAxi/Lis/issues">Issues</a> 
+            (Issues labeled 
+            <a href="https://codeberg.org/LordAxi/Lis/issues?q=&type=all&sort=relevance&labels=2297723%2c2297735&state=open&milestone=0&project=0&assignee=0&poster=0">"good first issue" or "contribution welcome"</a>
+            ) are a good starting point.
+        </p>
+
+        
+    </div>
+
+    <h4>Reporting Issues</h4>
+    <div class="div">
+        <p>
+            Issues can be reported on the 
+            <a href="https://codeberg.org/LordAxi/Lis/issues">Codeberg Issue site</a>.
+            Be sure to give a  detailed description and steps to reproduce 
+            the issue, As well as label the issue correctly.
+        </p>
+    </div>
+    <hr>
+    <h3>Quick Install</h3>
+    <p>it's recommended to read trough the documentation article: <a href="docs/getting_started/index.html">Getting Started</a></p>
+    <h4>Linux:</h4>
+    <div class="code_container">
+        <div class="div code_widget">
+            <div>
+                <p id="cmd1">git clone https://codeberg.org/LordAxi/Lis <br>
+                             cd Lis <br>
+                             ./install.sh
+                </p>
+            </div>
+            <button class="copy_btn" onclick="copyText(document.getElementById('cmd1').innerText);"><img src="assets/content_copy.svg" alt="copy"></button>
+        </div>
+    </div>
+    <h4>Windows</h4>
+    <p>Windows is currently not supported by Lis</p>
+</div>
+<div class="footer">
+    <marquee behavior="scroll" direction="right">
+    <p>
+        <pre>
+$$\       $$\<br>
+$$ |      \__|<br>
+$$ |      $$\  $$$$$$$\<br>
+$$ |      $$ |$$  _____|<br>
+$$ |      $$ |\$$$$$$\<br>
+$$ |      $$ | \____$$\<br>
+$$$$$$$$\ $$ |$$$$$$$  |<br>
+\________|\__|\_______/<br></pre>
+    </p>
+    </marquee>
+</div>
+</body>
+</html>
