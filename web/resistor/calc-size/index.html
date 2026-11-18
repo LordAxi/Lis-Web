@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lis - Web</title>
+    <link rel="stylesheet" type="text/css" href="../../../style.css">
+    <link rel="stylesheet" type="text/css" href="../../../docs/docs-style.css">
+    <link rel="stylesheet" type="text/css"  href="../../web-style.css">
+    <link rel="icon" type="image/png" href="../../../assets/logo.png">
+
+    <script>
+        function calculate() {
+            inV1 = document.getElementById("V1");
+            inV2 = document.getElementById("V2");
+            inI = document.getElementById("I");
+            
+            
+            if (!(inV1.value > 0) || !(inV2.value > 0) || !(inI.value > 0)) {
+                document.getElementById("text").innerHTML = 'Please only enter numbers bigger than 0.';
+            }
+            else {
+                document.getElementById("text").innerHTML = 'The needed resistance is <mark class="result" id="result"></mark> ohms.';
+                result = document.getElementById("result");
+                result.innerText = (inV1.value - inV2.value) / inI.value;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../../../"><img src="../../../assets/logo.png" alt="logo"></a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Calculating Resistors</h1>
+        <p>Formula: R = VΔ / I</p>
+
+        <p>VΔ = V₁ - V₂</p>
+        <p>V₁: Supplied voltage</p>
+        <p>V₂: Needed voltage</p>
+        <p>R: Resistance in ohms; <br>
+           I: Power in amps</p>
+
+        <div class="div input_container">
+            <label for="V1">Voltage (V)</label>
+            <input id="V1" name="V1" value="0" min="0" type="number">
+            <label for="V2">Needed voltage (V)</label>
+            <input id="V2" name="V2" value="0" min="0" type="number">
+            <label for="I">Needed power (A)</label>
+            <input id="I" name="I" value="0" min="0" type="number">
+            <div style="height: 10px;"></div>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+        <p id="text"></p>
+    </div>
+    
+
+    
+    <div class="side-bar">
+        <p><a style="text-decoration: none;" href="../../">⌂Home</a></p>
+        <details>
+            <summary>Resistors</summary>
+                <a href="../../resistor/calc-size/">Calculating Size</a>
+                <a href="../../resistor/identifying/">Identifying</a>
+        </details>
+    </div>
+</body>
+</html>
