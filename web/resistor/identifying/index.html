@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lis - Web</title>
+    <link rel="stylesheet" type="text/css" href="../../../style.css">
+    <link rel="stylesheet" type="text/css" href="../../../docs/docs-style.css">
+    <link rel="stylesheet" type="text/css"  href="../../web-style.css">
+    <link rel="icon" type="image/png" href="../../../assets/logo.png">
+
+    <script>
+        function calculate() {
+            band1 = document.getElementById("band1").value;
+            band2 = document.getElementById("band2").value;
+            band3 = document.getElementById("band3").value;
+            bandm = parseFloat(document.getElementById("bandm").value);
+            bandt = parseFloat(document.getElementById("bandt").value);
+            
+            result_o = document.getElementById("result_o");
+            result_t = document.getElementById("result_t");
+            
+            r = band1 + band2 + band3;
+            
+            if (bandm === -1 || bandm === -2) {
+                result_o.innerText = (parseInt(r) * Math.pow(10, bandm)).toFixed(4);
+            }
+            else {
+                result_o.innerText = parseInt(r) * Math.pow(10, bandm);
+            }
+            result_t.innerText = "±"+bandt+"%";
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../../../"><img src="../../../assets/logo.png" alt="logo"></a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Identifying Resistors</h1>
+
+        <p>
+            Enter the colors of the bands on the reseistor below, 
+            If your resitor only has 4 bands leave out the 3rd band.
+        </p>
+        <div class="div input_container">
+
+            <label for="band1">1st Band:</label>
+            <select name="band1" id="band1">
+                <option value="0">Black</option>
+                <option value="1">Brown</option>
+                <option value="2">Red</option>
+                <option value="3">Orange</option>
+                <option value="4">Yellow</option>
+                <option value="5">Green</option>
+                <option value="6">Blue</option>
+                <option value="7">Violet</option>
+                <option value="8">Grey</option>
+                <option value="9">White</option>
+            </select>
+            
+            <label for="band2">2nd Band:</label>
+            <select name="band2" id="band2">
+                <option value="">No Band</option>
+                <option value="0">Black</option>
+                <option value="1">Brown</option>
+                <option value="2">Red</option>
+                <option value="3">Orange</option>
+                <option value="4">Yellow</option>
+                <option value="5">Green</option>
+                <option value="6">Blue</option>
+                <option value="7">Violet</option>
+                <option value="8">Grey</option>
+                <option value="9">White</option>
+            </select>
+
+            <label for="band3">3rd Band:</label>
+            <select name="band3" id="band3">
+                <option value="">No Band</option>
+                <option value="0">Black</option>
+                <option value="1">Brown</option>
+                <option value="2">Red</option>
+                <option value="3">Orange</option>
+                <option value="4">Yellow</option>
+                <option value="5">Green</option>
+                <option value="6">Blue</option>
+                <option value="7">Violet</option>
+                <option value="8">Grey</option>
+                <option value="9">White</option>
+            </select>
+
+            <label for="bandm">Multiplier Band:</label>
+            <select name="bandm" id="bandm">
+                <option value="0">Black</option>
+                <option value="1">Brown</option>
+                <option value="2">Red</option>
+                <option value="3">Orange</option>
+                <option value="4">Yellow</option>
+                <option value="5">Green</option>
+                <option value="6">Blue</option>
+                <option value="7">Violet</option>
+                <option value="8">Grey</option>
+                <option value="9">White</option>
+                <option value="-1">Gold</option>
+                <option value="-2">Silver</option>
+            </select>
+
+            <label for="bandt">Tolerance Band:</label>
+            <select name="bandt" id="bandt">
+                <option value="1">Brown</option>
+                <option value="2">Red</option>
+                <option value="0.5">Green</option>
+                <option value="0.25">Blue</option>
+                <option value="0.1">Violet</option>
+                <option value="0.05">Grey</option>
+                <option value="5">Gold</option>
+                <option value="10">Silver</option>
+                <option value="20">No color</option>
+            </select>
+
+            <div style="height: 10px;"></div>
+            <button onclick="calculate()">Identify</button>
+        </div>
+
+        <p id="text">The resistance is <mark class="result" id="result_o">0</mark> ohms with a tolerance of <mark class="result" id="result_t">±1%</mark>.</p>
+
+        <table class="resistor-cc">
+
+            <tr>
+                <th>Color</th>
+                <th>1st Band</th>
+                <th>2nd Band</th>
+                <th>3rd Band</th>
+                <th>Multiplier Band</th>
+                <th>Tolerance Band</th>
+            </tr>
+            <tr>
+                <th>Black</th>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>*10⁰</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Brown</th>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>*10¹</td>
+                <td>±1%</td>
+            </tr>
+            <tr>
+                <th>Red</th>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>*10²</td>
+                <td>±2%</td>
+            </tr>
+            <tr>
+                <th>Orange</th>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>*10³</td>
+                <td>±3%</td>
+            </tr>
+            <tr>
+                <th>Yellow</th>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>*10⁴</td>
+                <td>±4%</td>
+            </tr>
+            <tr>
+                <th>Green</th>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>*10⁵</td>
+                <td>±0.5%</td>
+            </tr>
+            <tr>
+                <th>Blue</th>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>*10⁶</td>
+                <td>±0.25%</td>
+            </tr>
+            <tr>
+                <th>Violet</th>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>*10⁷</td>
+                <td>±0.1%</td>
+            </tr>
+            <tr>
+                <th>Grey</th>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>*10⁸</td>
+                <td>±0.05%</td>
+            </tr>
+            <tr>
+                <th>White</th>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>*10⁹</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Gold</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>*10⁻¹</td>
+                <td>±5%</td>
+            </tr>
+            <tr>
+                <th>Silver</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>*10⁻²</td>
+                <td>±10%</td>
+            </tr>
+        </table>
+    </div>
+    
+
+    
+    <div class="side-bar">
+        <p><a style="text-decoration: none;" href="../../">⌂Home</a></p>
+        <details>
+            <summary>Resistors</summary>
+                <a href="../../resistor/calc-size/">Calculating Size</a>
+                <a href="../../resistor/identifying/">Identifying</a>           
+        </details>
+    </div>
+</body>
+</html>
