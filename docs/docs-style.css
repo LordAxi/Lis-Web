@@ -1,0 +1,41 @@
+h1 {
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: min(90px, 9vw);
+    color: rgb(255, 255, 255);
+}
+h2 {
+    
+    font-family: "Roboto Mono";
+    font-size: 5vw;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    
+}
+
+ul.index,
+ol,
+h1,
+h2,
+h3,
+h4 {
+    margin-left: 20px;
+}
+
+ol {
+    color:rgb(255, 255, 255);
+    font-family: "Roboto Mono";
+    font-size: 20px;
+    list-style: decimal;
+}
+ul.index {
+    margin-left: 20px;
+    color:rgb(255, 255, 255);
+    font-family: "Roboto Mono";
+    font-size: min(50px, 5vw);
+    list-style: none;
+}
+p {
+    margin-left: 40px;
+}
+
